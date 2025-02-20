@@ -1,18 +1,44 @@
-## Getting Started
+# Proyecto de Gestión de Lectores y Escritores
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este proyecto implementa un sistema para gestionar lectores, escritores y libros en Java. Permite registrar libros, asignarlos a escritores y realizar un seguimiento de los hábitos de lectura de los usuarios.
 
-## Folder Structure
+## Características
+- Clases principales: `Lector`, `Escritor`, `Libro` y `Persona`.
+- Seguimiento de libros leídos por cada lector.
+- Determinación del género literario preferido de cada lector.
+- Gestión de obras escritas por cada escritor.
+- Control del número total de libros registrados.
 
-The workspace contains two folders by default, where:
+## Instalación y Uso
+1. Clonar este repositorio:
+   ```sh
+   git clone https://github.com/tuusuario/nombre-repo.git
+   ```
+2. Compilar y ejecutar el programa en un entorno compatible con Java.
+3. Crear instancias de `Lector`, `Escritor` y `Libro` en el método `main` para probar las funcionalidades.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Ejemplo de Uso
+```java
+public class Main {
+    public static void main(String[] args) {
+        Libro libro1 = new Libro("El principito", "Fantasía", 98, 1943);
+        Libro libro2 = new Libro("1984", "Distopía", 328, 1949);
+        
+        Escritor escritor = new Escritor("George", "Orwell", LocalDate.of(1903, 6, 25), "Reino Unido", libro2);
+        
+        Lector lector = new Lector("Juan", "Pérez", LocalDate.of(1990, 5, 15), "España", libro1, "BIB123");
+        lector.leer(libro2);
+        
+        System.out.println("Información del escritor:\n" + escritor);
+        System.out.println("Información del lector:\n" + lector);
+    }
+}
+```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Posibles Mejoras
+- Implementar persistencia de datos.
+- Agregar interfaz gráfica para la gestión de libros y usuarios.
+- Integración con una base de datos.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Licencia
+Este proyecto está bajo la licencia MIT.
